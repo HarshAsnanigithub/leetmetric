@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #87bba2;
+  color: #364958;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #55828b;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  color: #364958;
+}
+
+.user-input-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+#user-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #3b6064;
+  background-color: #c9e4ca;
+  color: #364958;
+}
+
+#search-btn {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b6064;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#search-btn:hover {
+  background-color: #364958;
+}
+
+#search-btn:disabled {
+  background-color: #aaa;
+}
+
+.stats-container.hidden {
+  display: none;
+}
+
+.progress {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #3b6064;
+  background: conic-gradient(#364958 var(--progress-degree, 0%), #55828b 0%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.stats-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.card {
+  background-color: #c9e4ca;
+  color: #364958;
+  padding: 1rem;
+  border-radius: 12px;
+  min-width: 180px;
+  flex: 1 1 200px;
+  text-align: center;
+  transition: background 0.3s ease;
+  border: 1px solid #3b6064;
+}
+
+.card:hover {
+  background-color: #b8dcb8;
+}
+
+.acceptance-rate-card {
+  width: 50%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.rate-bar-container {
+  width: 100%;
+  height: 16px;
+  background-color: #d1fae5;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.rate-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #10b981, #34d399);
+  transition: width 0.5s ease-in-out;
+}
+
+#acceptance-rate-text {
+  margin-top: 8px;
+  text-align: right;
+  font-weight: bold;
+  color: #55828b;
+}
+
+@media (max-width: 768px) {
+  .progress {
+    justify-content: center;
+  }
+
+  .card {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #search-btn {
+    width: 100%;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+    font-size: 0.8rem;
+  }
+
+  .acceptance-rate-card {
+    width: 100%;
+  }
+}
+
