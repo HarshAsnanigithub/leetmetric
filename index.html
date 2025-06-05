@@ -10,14 +10,36 @@
   <div class="container">
     <h1>LeetMetric</h1>
 
-    <div class="user-container">
-      <p>Enter your LeetCode username:</p>
-      <div class="user-input-container">
-        <input type="text" id="user-input" placeholder="Enter username here" />
-        <button id="search-btn">Search</button>
+    <!-- Mode Selection -->
+    <div class="mode-selection">
+      <label><input type="radio" name="mode" value="single" checked> Display Stats</label>
+      <label><input type="radio" name="mode" value="compare"> Compare Users</label>
+    </div>
+
+    <!-- Single User Search Section -->
+    <div id="single-user-section">
+      <div class="user-container">
+        <p>Enter your LeetCode username:</p>
+        <div class="user-input-container">
+          <input type="text" id="user-input" placeholder="Enter username here" />
+          <button id="search-btn">Search</button>
+        </div>
       </div>
     </div>
 
+    <!-- Compare Users Section -->
+    <div id="compare-user-section" class="hidden">
+      <div class="user-container">
+        <p>Enter two LeetCode usernames to compare:</p>
+        <div class="user-input-container">
+          <input type="text" id="user1-input" placeholder="User 1" />
+          <input type="text" id="user2-input" placeholder="User 2" />
+          <button id="compare-btn">Compare</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Single User Stats -->
     <div class="stats-container hidden">
       <div class="progress">
         <div class="progress-item">
@@ -50,8 +72,14 @@
         <p id="acceptance-rate-text"></p>
       </div>
     </div>
+
+    <!-- Compare Stats -->
+    <div class="compare-result hidden">
+      <div class="compare-block" id="compare-cards"></div>
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
