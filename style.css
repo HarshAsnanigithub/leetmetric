@@ -27,12 +27,27 @@ body {
   gap: 1.5rem;
 }
 
+/* Title */
 h1 {
   text-align: center;
   font-size: 2rem;
   color: #55828b;
 }
 
+/* Mode selection toggle */
+.mode-selection {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-weight: bold;
+  color: #3b6064;
+}
+
+.mode-selection input {
+  margin-right: 5px;
+}
+
+/* User input */
 .user-container {
   display: flex;
   flex-direction: column;
@@ -49,9 +64,11 @@ h1 {
   width: 100%;
 }
 
-#user-input {
+#user-input,
+#user1-input,
+#user2-input {
   flex: 1;
-  min-width: 220px;
+  min-width: 180px;
   padding: 0.6rem;
   border-radius: 8px;
   border: 1px solid #3b6064;
@@ -59,7 +76,8 @@ h1 {
   color: #364958;
 }
 
-#search-btn {
+#search-btn,
+#compare-btn {
   padding: 0.6rem 1rem;
   border: none;
   border-radius: 8px;
@@ -70,18 +88,25 @@ h1 {
   transition: background 0.3s ease;
 }
 
-#search-btn:hover {
+#search-btn:hover,
+#compare-btn:hover {
   background-color: #364958;
 }
 
-#search-btn:disabled {
+#search-btn:disabled,
+#compare-btn:disabled {
   background-color: #aaa;
 }
 
-.stats-container.hidden {
+/* Stats display */
+.stats-container.hidden,
+.compare-result.hidden,
+#compare-user-section.hidden,
+#single-user-section.hidden {
   display: none;
 }
 
+/* Progress circle */
 .progress {
   display: flex;
   justify-content: space-around;
@@ -106,6 +131,7 @@ h1 {
   color: #ffffff;
 }
 
+/* Cards */
 .stats-cards {
   display: flex;
   flex-wrap: wrap;
@@ -130,6 +156,7 @@ h1 {
   background-color: #b8dcb8;
 }
 
+/* Acceptance rate */
 .acceptance-rate-card {
   width: 50%;
   margin: auto;
@@ -149,7 +176,7 @@ h1 {
 .rate-bar-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(to right, #10b981, #34d399);
+  background: linear-gradient(to right, #3b6064, #55828b);
   transition: width 0.5s ease-in-out;
 }
 
@@ -160,6 +187,42 @@ h1 {
   color: #55828b;
 }
 
+/* Compare layout */
+.compare-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.compare-card {
+  background-color: #c9e4ca;
+  padding: 1rem;
+  border-radius: 12px;
+  flex: 1 1 300px;
+  border: 1px solid #3b6064;
+}
+
+.compare-card h3 {
+  color: #55828b;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.compare-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #364958;
+}
+
+.compare-stats p {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #55828b30;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .progress {
     justify-content: center;
@@ -167,6 +230,10 @@ h1 {
 
   .card {
     flex: 1 1 45%;
+  }
+
+  .acceptance-rate-card {
+    width: 90%;
   }
 }
 
@@ -176,7 +243,8 @@ h1 {
     align-items: stretch;
   }
 
-  #search-btn {
+  #search-btn,
+  #compare-btn {
     width: 100%;
   }
 
@@ -190,8 +258,8 @@ h1 {
     font-size: 0.8rem;
   }
 
-  .acceptance-rate-card {
-    width: 100%;
+  .compare-block {
+    flex-direction: column;
   }
 }
 
