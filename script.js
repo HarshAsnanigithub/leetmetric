@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const modeRadios = document.getElementsByName("mode");
 
-  const URL = `https://leetcode-stats-api.herokuapp.com/`;
+  const URL = "https://leetcode-stats.tashif.codes/";
 
   // Switch mode (Display or Compare)
   modeRadios.forEach(radio => {
@@ -181,3 +181,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
